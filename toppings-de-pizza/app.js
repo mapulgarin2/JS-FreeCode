@@ -120,6 +120,93 @@ listaDeToppings.remove()//remueve el elemento 'listado-toppings' del dom.*/
 
 /*Recorrer el DOM*/
 
+/*const listaDeTopping = document.getElementById('listado-toppings');
+
+console.log(listaDeTopping);
+
+
+console.log(listaDeTopping.parentElement)//devuelve el elemento padre del elemento 'listado-toppings',este solo incluye los elementos html.
+
+console.log(listaDeTopping.parentNode)//devuelve el elemento padre del elemento 'listado-toppings',este incluye texto y comentarios al ser el nodo mas amplio.
+
+console.log(listaDeTopping.parentElement.parentElement);//devuelve el elemento padre del elemento 'listado-toppings',este solo incluye los elementos html.
+
+console.log(listaDeTopping.children);//devuelve un arreglo con todos los elementos 'li' del elemento 'listado-toppings'.
+
+console.log(listaDeTopping.firstElementChild);//devuelve el primer elemento 'li' del elemento 'listado-toppings' entre fisrstElmentChild y fisrtChild, es mas practica para nossotros.
+
+console.log(listaDeTopping.firstChild);//devuelve el primer nodo del elemento 'listado-toppings' pero al incluir espacios en este caso por identacion devuelve el texto.
+
+console.log(listaDeTopping.children[0]);//devuelve el primer elemento 'li' del elemento 'listado-toppings',esta propiedad si retornaria elementos html.
+
+console.log(listaDeTopping.lastChild);//devuelve el ultimo nodo del elemento 'listado-toppings',pero en este caso tambin devuelve el texto al tener espacios de identacion,este utiliza nodos.
+
+console.log(listaDeTopping.lastElementChild);//devuelve el ultimo elemento 'li' del elemento 'listado-toppings',esta propiedad si retornaria elementos html.
+
+console.log(listaDeTopping.previousElementSibling);//devuelve el elemento 'li' anterior del elemento 'listado-toppings',este devuelve el hermano anterior.
+
+console.log(listaDeTopping.nextElementSibling);//devuelve el elemento 'li' siguiente del elemento 'listado-toppings',este devuelve el hermano siguiente.
+
+console.log(listaDeTopping.nextSibling);//devuelve el elemento 'li' siguiente del elemento 'listado-toppings',este devuelve el hermano siguiente o el texto,pues este trabajo es con nodos,es en este caso.
+
+
+console.log(listaDeTopping.firstElementChild.firstElementChild);//devuelve el primer elemento 'li' del primer elemento 'li' del elemento 'listado-toppings',esto sirvepara encadenar, puedes ir mas abajo,mas arriba o mas profundo en la jerarquia o DOM.*/
+
+/*-------------------------------------------------------------*/
+
+/*Eventos del DOM*/
+/*    Conceptos importantes
+-Elemento target(Blanco del evento).
+-Trigger--Desencadenar
+-Event Handler--Manejador de eventos.
+'Funcion en si que maneja el evento.'
+-Event Listener--Escuchador de eventos.
+' Se asocia un evento con una funcion.'
+*/
+//Eventos en HTML
+/*function eventOnClick(topping){
+    console.log('El topping '+topping+' fue agregado');
+};//funcion anonima que se le pasa un parametro y entrga una cadena de caracteres por consola,este ejemplo es para usar onclick() en las etiquetas de HTML.
+/* <li onclick="eventOnClick('Aceitunas')" class="topping fondo-marron" id="aceitunas">Aceitunas</li> */
+
+//Evento .addEventListener()
+
+// const albahaca = document.getElementById('albahaca');
+
+/*function eventOnClick(e){
+    console.log(e.target);
+}//el primer parametro es el evento y el segundo es el manejador de eventos.,este e.target muestra el elemento target del evento.*/
+
+/*function eventOnClick(e){    
+    console.log(e.target.innerText);//muestra el texto del elemento target usando el doble punto,p
+}*/
+
+/*albahaca.addEventListener('click',eventOnClick);//el primer parametro es el evento y el segundo es el manejador de eventos.{*/
+
+/*Todos los eventos en el DOM se representan como un objeto pues estos tinen propiedades y metodos*/
+//________________________________
+const toppings = document.getElementsByClassName('topping');//selecciona todos los elementos con la clase 'topping'.
+
+//console.log(toppings);
+
+
+function eventOnClick(e){
+    console.log(e.target.innerText);
+}//el primer parametro es el evento y el segundo es el manejador de eventos.,este e.target muestra el texto del elemento target del evento.
+
+/*for(const topping of toppings){
+   topping.addEventListener('click',eventOnClick);
+}//Este ciclo recorre todos los elementos con la clase 'topping' y agrega un manejador de eventos 'eventOnClick' a cada elemento.*/
+    
+for(const topping of toppings){
+    topping.addEventListener('click',(e)=>{
+        console.log(e.target.innerText);
+    });
+};//Este ciclo recorre todos los elementos con la clase 'topping' y agrega un manejador de eventos 'eventOnClick' a cada elemento y muestra el texto del elemento target utilizando una funcion flecha.
+
+
+
+
 
 
 
