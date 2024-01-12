@@ -58,8 +58,12 @@ ul{
 }
 
 .fondo-marron{
-    background-color: brown;
+    background-color: #a66133;
 }
 .fondo-naranja{
-    background-color: orange;
+    background-color: #ff7504;
+}
+
+.texto-verde{
+    color:rgb(5, 248, 5);
 }
